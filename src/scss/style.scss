@@ -1,0 +1,270 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #fee9f0;
+  font-size: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a .app {
+  background-color: #fee9f0;
+}
+.card {
+  margin: 50px auto;
+  background-color: #f5f8f9;
+  /* height: 430px; */
+  width: 350px;
+  box-shadow: 0 0 6px grey;
+  overflow: hidden;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  .card__header {
+    height: 215px;
+    overflow: hidden;
+    position: relative;
+    & img {
+      width: 100%;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(71, 32, 84, 0.2);
+    }
+  }
+  .card__body {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -35px;
+      left: -50px;
+      background-color: #f5f8f9;
+      height: 100px;
+      width: 120%;
+      display: block;
+      transform: rotate(10deg);
+    }
+
+    .card__content {
+      position: relative;
+      padding: 0 20px;
+      .card__title p {
+        font-size: 0.8rem;
+      }
+      .card__add {
+        position: relative;
+        input {
+          width: 100%;
+          height: 40px;
+          /* float: left; */
+          color: #fff;
+          font-size: 15px;
+          font-weight: 400;
+          text-indent: 18px;
+          /* padding: 0 60px 0 0; */
+          background: rgba(222, 57, 99, 0.6);
+          /* border-radius: 3px; */
+          border-top-right-radius: 25px;
+          border-bottom-right-radius: 25px;
+          border: 0px;
+          box-shadow: none;
+          outline: none;
+          &::placeholder {
+            color: #f5f8f9;
+          }
+        }
+        &__btn {
+          border: none;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          /* width: 40px;
+        height: 40px; */
+          box-shadow: 0 0 0 2px #de3963;
+          cursor: pointer;
+          outline: none;
+          i {
+            width: 40px;
+            height: 40px;
+            border-radius: 25px;
+            background: #fff;
+            line-height: 40px;
+            color: #de3963;
+          }
+        }
+      }
+      .card__todo {
+        #todo {
+          padding-top: 30px;
+          list-style: none;
+          span {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+          }
+          li{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #444;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 2px rgba(44, 62, 80, 0.3);
+            margin: 0 0 10px 0;
+            padding: 0 10px; 
+            word-break: break-word;
+            span{
+              .fa-trash-alt{
+                cursor: pointer;
+                margin-right: 5px;
+                &:hover{
+                  color: #de3963;
+                }
+              }
+              .fa-check-circle{
+                cursor: pointer;
+                &:hover{
+                  color: rgb(8, 90, 15);
+                }
+              }
+            }
+          }
+          .iscompleted{
+            display: none;
+          }
+        }
+        #completed{
+          padding-top: 30px;
+          list-style: none;
+          span {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+          }
+          li{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            min-height: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #444;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 2px rgba(44, 62, 80, 0.3);
+            margin: 0 0 10px 0;
+            padding: 0 10px; 
+            word-break: break-word;
+            span{
+              .fa-trash-alt{
+                cursor: pointer;
+                margin-right: 5px;
+                &:hover{
+                  color: #de3963;
+                }
+              }
+              .fa-check-circle{
+                cursor: pointer;
+                
+                  color: rgb(8, 90, 15);
+                
+              }
+            }
+          }
+          .iscompleted{
+            display: none;
+          }
+        }
+        .todo-emty:empty:after{
+          content: "TRống";
+        }
+        #completed {
+          padding: 30px 0;
+          position: relative;
+          &::before {
+            content: "";
+            width: 150px;
+            height: 1px;
+            background: #d8e5e0;
+            position: absolute;
+            top: 14px;
+            left: 50%;
+            margin: 0 0 0 -75px;
+          }
+          span {
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+          }
+        }
+      }
+    }
+    /* Filler Button */
+    .filter-btn {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      transition: all 0.4s ease-in-out 0s;
+      & span i {
+        width: 40px;
+        height: 40px;
+        background: #fa396b;
+        display: block;
+        position: absolute;
+        right: 25px;
+        top: -30px;
+        text-align: center;
+        color: #fff;
+        line-height: 40px;
+        border-radius: 50%;
+        font-size: 1rem;
+        z-index: 999;
+      }
+      span.toggle-btn:hover {
+        cursor: pointer;
+      }
+      & a {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        right: 25px;
+        display: block;
+        top: -30px;
+        color: #fff;
+        z-index: 99;
+        font-size: 1.2rem;
+        transition: all 0.4s cubic-bezier(0.68, 1, 0.265, 1);
+      }
+      &::after {
+        height: 150px;
+        width: 150px;
+        content: "";
+        background-color: #fa396b;
+        position: absolute;
+        top: -86px;
+        right: -35px;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out 0s;
+      }
+    }
+  }
+}
